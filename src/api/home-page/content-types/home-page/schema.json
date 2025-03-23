@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero-center-with-bg-image"
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.banner-with-items",
+        "layout.section",
+        "layout.section-with-cta",
+        "layout.rich-body-text"
+      ]
+    }
+  }
+}

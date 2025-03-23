@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_data_title_blocks",
+  "info": {
+    "displayName": "Title Block",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "singularName": "menu",
+    "pluralName": "menus",
+    "displayName": "Menu",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "menuItem": {
+      "type": "dynamiczone",
+      "components": [
+        "ui.link",
+        "ui.link-list"
+      ]
+    }
+  }
+}

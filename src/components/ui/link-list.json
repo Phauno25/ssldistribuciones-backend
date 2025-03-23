@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_ui_link_lists",
+  "info": {
+    "displayName": "linkList",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.link"
+    }
+  }
+}

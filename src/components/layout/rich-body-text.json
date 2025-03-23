@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_rich_body_texts",
+  "info": {
+    "displayName": "Rich Body Text",
+    "icon": "strikeThrough",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "blocks"
+    }
+  }
+}

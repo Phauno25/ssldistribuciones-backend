@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_collections",
+  "info": {
+    "singularName": "product-collection",
+    "pluralName": "product-collections",
+    "displayName": "Product Collection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "subcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-subcategory.product-subcategory",
+      "inversedBy": "collections"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_banner_with_items",
+  "info": {
+    "displayName": "Banner with Items",
+    "icon": "server",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.item",
+      "max": 4
+    },
+    "background": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

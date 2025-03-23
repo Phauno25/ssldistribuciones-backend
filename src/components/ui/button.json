@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_ui_buttons",
+  "info": {
+    "displayName": "Button",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "filled",
+        "outlined",
+        "link",
+        "gradient"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

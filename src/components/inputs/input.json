@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_inputs_inputs",
+  "info": {
+    "displayName": "Input",
+    "icon": "pencil"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "password",
+        "phone",
+        "email",
+        "checkbox",
+        "radio"
+      ],
+      "default": "text"
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
+    },
+    "label": {
+      "type": "string"
+    },
+    "helperText": {
+      "type": "string"
+    },
+    "accesibilityLabel": {
+      "type": "string"
+    }
+  }
+}

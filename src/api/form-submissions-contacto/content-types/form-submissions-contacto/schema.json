@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "form_submissions_contactos",
+  "info": {
+    "singularName": "form-submissions-contacto",
+    "pluralName": "form-submissions-contactos",
+    "displayName": "Form Submissions: Contacto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "apellido": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "mensaje": {
+      "type": "text"
+    }
+  }
+}

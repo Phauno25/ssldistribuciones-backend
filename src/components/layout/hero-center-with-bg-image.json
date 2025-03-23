@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_layout_hero_center_with_bg_images",
+  "info": {
+    "displayName": "Hero",
+    "icon": "expand",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "actionButtons": {
+      "type": "component",
+      "repeatable": true,
+      "max": 2,
+      "component": "ui.button"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "centered",
+        "column"
+      ],
+      "default": "left"
+    },
+    "imgAsBackground": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

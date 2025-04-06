@@ -131,25 +131,6 @@ export interface LayoutBannerWithItems extends Schema.Component {
   };
 }
 
-export interface InputsInput extends Schema.Component {
-  collectionName: 'components_inputs_inputs';
-  info: {
-    displayName: 'Input';
-    icon: 'pencil';
-  };
-  attributes: {
-    name: Attribute.String;
-    type: Attribute.Enumeration<
-      ['text', 'password', 'phone', 'email', 'checkbox', 'radio']
-    > &
-      Attribute.DefaultTo<'text'>;
-    required: Attribute.Boolean & Attribute.DefaultTo<false>;
-    label: Attribute.String;
-    helperText: Attribute.String;
-    accesibilityLabel: Attribute.String;
-  };
-}
-
 export interface DataTitleBlock extends Schema.Component {
   collectionName: 'components_data_title_blocks';
   info: {
@@ -190,6 +171,25 @@ export interface DataItem extends Schema.Component {
   };
 }
 
+export interface InputsInput extends Schema.Component {
+  collectionName: 'components_inputs_inputs';
+  info: {
+    displayName: 'Input';
+    icon: 'pencil';
+  };
+  attributes: {
+    name: Attribute.String;
+    type: Attribute.Enumeration<
+      ['text', 'password', 'phone', 'email', 'checkbox', 'radio']
+    > &
+      Attribute.DefaultTo<'text'>;
+    required: Attribute.Boolean & Attribute.DefaultTo<false>;
+    label: Attribute.String;
+    helperText: Attribute.String;
+    accesibilityLabel: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -201,10 +201,10 @@ declare module '@strapi/types' {
       'layout.rich-body-text': LayoutRichBodyText;
       'layout.hero-center-with-bg-image': LayoutHeroCenterWithBgImage;
       'layout.banner-with-items': LayoutBannerWithItems;
-      'inputs.input': InputsInput;
       'data.title-block': DataTitleBlock;
       'data.key-value': DataKeyValue;
       'data.item': DataItem;
+      'inputs.input': InputsInput;
     }
   }
 }

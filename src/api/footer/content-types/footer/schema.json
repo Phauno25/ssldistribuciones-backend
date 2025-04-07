@@ -30,6 +30,11 @@
     },
     "subtitle": {
       "type": "blocks"
+    },
+    "mediaLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.key-value"
     }
   }
 }

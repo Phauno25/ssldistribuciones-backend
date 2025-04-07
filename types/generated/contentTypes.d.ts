@@ -808,6 +808,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
       'api::menu.menu'
     >;
     subtitle: Attribute.Blocks;
+    mediaLinks: Attribute.Component<'data.key-value', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -819,6 +820,40 @@ export interface ApiFooterFooter extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFormConfigFormConfig extends Schema.CollectionType {
+  collectionName: 'forms_configs';
+  info: {
+    singularName: 'form-config';
+    pluralName: 'forms-configs';
+    displayName: 'Forms Config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    mail_from: Attribute.String;
+    mail_to: Attribute.String;
+    mail_subject: Attribute.String;
+    mail_body: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::form-config.form-config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::form-config.form-config',
       'oneToOne',
       'admin::user'
     > &
@@ -1251,6 +1286,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::footer.footer': ApiFooterFooter;
+      'api::form-config.form-config': ApiFormConfigFormConfig;
       'api::form-submissions-contacto.form-submissions-contacto': ApiFormSubmissionsContactoFormSubmissionsContacto;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::menu.menu': ApiMenuMenu;

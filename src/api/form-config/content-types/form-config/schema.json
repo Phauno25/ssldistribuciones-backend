@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forms_configs",
+  "info": {
+    "singularName": "form-config",
+    "pluralName": "forms-configs",
+    "displayName": "Forms Config"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "mail_from": {
+      "type": "string"
+    },
+    "mail_to": {
+      "type": "string"
+    },
+    "mail_subject": {
+      "type": "string"
+    },
+    "mail_body": {
+      "type": "text"
+    }
+  }
+}

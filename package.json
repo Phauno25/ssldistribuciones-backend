@@ -11,17 +11,16 @@
     "deploy": "strapi deploy"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "4.25.22",
-    "@strapi/plugin-i18n": "4.25.22",
-    "@strapi/plugin-users-permissions": "4.25.22",
+    "@strapi/plugin-cloud": "5.12.3",
+    "@strapi/plugin-users-permissions": "5.12.3",
     "@strapi/provider-email-sendgrid": "^5.4.0",
-    "@strapi/strapi": "4.25.22",
-    "better-sqlite3": "8.6.0",
+    "@strapi/strapi": "5.12.3",
+    "better-sqlite3": "11.3.0",
     "pg": "^8.14.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
-    "styled-components": "5.3.3"
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
   },
   "author": {
     "name": "A Strapi developer"
@@ -34,7 +33,6 @@
     "npm": ">=6.0.0"
   },
   "license": "MIT",
-  "packageManager": "pnpm@9.2.0+sha512.98a80fd11c2e7096747762304106432b3ddc67dcf54b5a8c01c93f68a2cd5e05e6821849522a06fb76284d41a2660d5e334f2ee3bbf29183bf2e739b1dafa771",
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@types/react": "^19.1.0",

@@ -4,6 +4,7 @@
  * page controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreController('api::page.page');
+
+export default factories.createCoreController('api::page.page');

@@ -4,6 +4,7 @@
  * form-submissions-contacto service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreService('api::form-submissions-contacto.form-submissions-contacto');
+
+export default factories.createCoreService('api::form-submissions-contacto.form-submissions-contacto');

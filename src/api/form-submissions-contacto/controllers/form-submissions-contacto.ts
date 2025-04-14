@@ -4,6 +4,7 @@
  * form-submissions-contacto controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreController('api::form-submissions-contacto.form-submissions-contacto');
+
+export default factories.createCoreController('api::form-submissions-contacto.form-submissions-contacto');

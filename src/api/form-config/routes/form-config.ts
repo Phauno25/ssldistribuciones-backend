@@ -4,6 +4,7 @@
  * form-config router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreRouter('api::form-config.form-config');
+
+export default factories.createCoreRouter('api::form-config.form-config');

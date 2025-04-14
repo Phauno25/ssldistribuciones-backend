@@ -4,6 +4,7 @@
  * footer controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreController('api::footer.footer');
+
+export default factories.createCoreController('api::footer.footer');

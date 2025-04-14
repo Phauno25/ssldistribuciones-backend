@@ -4,6 +4,7 @@
  * form-submissions-contacto router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreRouter('api::form-submissions-contacto.form-submissions-contacto');
+
+export default factories.createCoreRouter('api::form-submissions-contacto.form-submissions-contacto');

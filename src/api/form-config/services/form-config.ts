@@ -4,6 +4,7 @@
  * form-config service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreService('api::form-config.form-config');
+
+export default factories.createCoreService('api::form-config.form-config');

@@ -4,6 +4,7 @@
  * product-subcategory router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreRouter('api::product-subcategory.product-subcategory');
+
+export default factories.createCoreRouter('api::product-subcategory.product-subcategory');

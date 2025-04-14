@@ -14,7 +14,7 @@
   "attributes": {
     "hero": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "layout.hero-center-with-bg-image"
     },
     "body": {
@@ -33,7 +33,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "name",
+      "required": true
     }
   }
 }

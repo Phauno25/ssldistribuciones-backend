@@ -4,6 +4,7 @@
  * form-config controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreController('api::form-config.form-config');
+
+export default factories.createCoreController('api::form-config.form-config');

@@ -4,6 +4,7 @@
  * product-detail router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreRouter('api::product-detail.product-detail');
+
+export default factories.createCoreRouter('api::product-detail.product-detail');

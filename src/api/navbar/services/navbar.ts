@@ -4,6 +4,7 @@
  * navbar service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreService('api::navbar.navbar');
+
+export default factories.createCoreService('api::navbar.navbar');

@@ -4,6 +4,7 @@
  * navbar router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreRouter('api::navbar.navbar');
+
+export default factories.createCoreRouter('api::navbar.navbar');

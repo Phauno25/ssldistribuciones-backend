@@ -4,6 +4,7 @@
  * product-collection controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreController('api::product-collection.product-collection');
+
+export default factories.createCoreController('api::product-collection.product-collection');

@@ -4,6 +4,7 @@
  * service router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreRouter('api::service.service');
+
+export default factories.createCoreRouter('api::service.service');

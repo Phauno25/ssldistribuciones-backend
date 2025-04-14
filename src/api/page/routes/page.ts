@@ -4,6 +4,7 @@
  * page router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreRouter('api::page.page');
+
+export default factories.createCoreRouter('api::page.page');

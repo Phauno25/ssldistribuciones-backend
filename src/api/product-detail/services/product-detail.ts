@@ -4,6 +4,7 @@
  * product-detail service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreService('api::product-detail.product-detail');
+
+export default factories.createCoreService('api::product-detail.product-detail');

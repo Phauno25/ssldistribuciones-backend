@@ -4,6 +4,7 @@
  * home-page service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreService('api::home-page.home-page');
+
+export default factories.createCoreService('api::home-page.home-page');

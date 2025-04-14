@@ -1,210 +1,215 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface UiLink extends Schema.Component {
-  collectionName: 'components_ui_links';
+export interface DataItem extends Struct.ComponentSchema {
+  collectionName: 'components_data_items';
   info: {
-    displayName: 'link';
-    icon: 'hashtag';
     description: '';
-  };
-  attributes: {
-    url: Attribute.String;
-    name: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface UiLinkList extends Schema.Component {
-  collectionName: 'components_ui_link_lists';
-  info: {
-    displayName: 'linkList';
+    displayName: 'Item';
     icon: 'bulletList';
-    description: '';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    link: Attribute.Component<'ui.link', true>;
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Enumeration<['user-info', 'contacts', 'logout']>;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
   };
 }
 
-export interface UiButton extends Schema.Component {
-  collectionName: 'components_ui_buttons';
-  info: {
-    displayName: 'Button';
-    icon: 'cursor';
-    description: '';
-  };
-  attributes: {
-    variant: Attribute.Enumeration<['filled', 'outlined', 'link', 'gradient']>;
-    text: Attribute.String;
-    url: Attribute.String;
-  };
-}
-
-export interface InputsInput extends Schema.Component {
-  collectionName: 'components_inputs_inputs';
-  info: {
-    displayName: 'Input';
-    icon: 'pencil';
-  };
-  attributes: {
-    name: Attribute.String;
-    type: Attribute.Enumeration<
-      ['text', 'password', 'phone', 'email', 'checkbox', 'radio']
-    > &
-      Attribute.DefaultTo<'text'>;
-    required: Attribute.Boolean & Attribute.DefaultTo<false>;
-    label: Attribute.String;
-    helperText: Attribute.String;
-    accesibilityLabel: Attribute.String;
-  };
-}
-
-export interface LayoutSection extends Schema.Component {
-  collectionName: 'components_layout_sections';
-  info: {
-    displayName: 'Section With Items';
-    icon: 'server';
-    description: '';
-  };
-  attributes: {
-    image: Attribute.Media<'images'>;
-    replaceImageWithSteps: Attribute.Boolean;
-    titleBlock: Attribute.Component<'data.title-block'>;
-    items: Attribute.Component<'data.item', true> &
-      Attribute.SetMinMax<
-        {
-          max: 4;
-        },
-        number
-      >;
-  };
-}
-
-export interface LayoutSectionWithCta extends Schema.Component {
-  collectionName: 'components_layout_section_with_ctas';
-  info: {
-    displayName: 'Section With CTA';
-    icon: 'apps';
-    description: '';
-  };
-  attributes: {
-    image: Attribute.Media<'images'>;
-    callToActions: Attribute.Component<'ui.button', true>;
-    imageAlt: Attribute.String;
-    titleBlock: Attribute.Component<'data.title-block'>;
-  };
-}
-
-export interface LayoutRichBodyText extends Schema.Component {
-  collectionName: 'components_layout_rich_body_texts';
-  info: {
-    displayName: 'Rich Body Text';
-    icon: 'strikeThrough';
-    description: '';
-  };
-  attributes: {
-    text: Attribute.Blocks;
-  };
-}
-
-export interface LayoutHeroCenterWithBgImage extends Schema.Component {
-  collectionName: 'components_layout_hero_center_with_bg_images';
-  info: {
-    displayName: 'Hero';
-    icon: 'expand';
-    description: '';
-  };
-  attributes: {
-    image: Attribute.Media<'images' | 'videos'>;
-    title: Attribute.String;
-    description: Attribute.Text;
-    actionButtons: Attribute.Component<'ui.button', true> &
-      Attribute.SetMinMax<
-        {
-          max: 2;
-        },
-        number
-      >;
-    variant: Attribute.Enumeration<['left', 'right', 'centered', 'column']> &
-      Attribute.DefaultTo<'left'>;
-    imgAsBackground: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface LayoutBannerWithItems extends Schema.Component {
-  collectionName: 'components_layout_banner_with_items';
-  info: {
-    displayName: 'Banner with Items';
-    icon: 'server';
-    description: '';
-  };
-  attributes: {
-    items: Attribute.Component<'data.item', true> &
-      Attribute.SetMinMax<
-        {
-          max: 4;
-        },
-        number
-      >;
-    background: Attribute.Media<'images' | 'videos'>;
-  };
-}
-
-export interface DataTitleBlock extends Schema.Component {
-  collectionName: 'components_data_title_blocks';
-  info: {
-    displayName: 'Title Block';
-    icon: 'filter';
-  };
-  attributes: {
-    header: Attribute.String;
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
-export interface DataKeyValue extends Schema.Component {
+export interface DataKeyValue extends Struct.ComponentSchema {
   collectionName: 'components_data_key_values';
   info: {
     displayName: 'KeyValue';
     icon: 'oneToOne';
   };
   attributes: {
-    name: Attribute.String;
-    value: Attribute.String;
+    name: Schema.Attribute.String;
+    value: Schema.Attribute.String;
   };
 }
 
-export interface DataItem extends Schema.Component {
-  collectionName: 'components_data_items';
+export interface DataTitleBlock extends Struct.ComponentSchema {
+  collectionName: 'components_data_title_blocks';
   info: {
-    displayName: 'Item';
-    icon: 'bulletList';
-    description: '';
+    displayName: 'Title Block';
+    icon: 'filter';
   };
   attributes: {
-    image: Attribute.Media<'images'>;
-    title: Attribute.String;
-    description: Attribute.Text;
-    icon: Attribute.Enumeration<['user-info', 'contacts', 'logout']>;
+    description: Schema.Attribute.Text;
+    header: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
-      'ui.link': UiLink;
-      'ui.link-list': UiLinkList;
-      'ui.button': UiButton;
+export interface InputsInput extends Struct.ComponentSchema {
+  collectionName: 'components_inputs_inputs';
+  info: {
+    displayName: 'Input';
+    icon: 'pencil';
+  };
+  attributes: {
+    accesibilityLabel: Schema.Attribute.String;
+    helperText: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    required: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    type: Schema.Attribute.Enumeration<
+      ['text', 'password', 'phone', 'email', 'checkbox', 'radio']
+    > &
+      Schema.Attribute.DefaultTo<'text'>;
+  };
+}
+
+export interface LayoutBannerWithItems extends Struct.ComponentSchema {
+  collectionName: 'components_layout_banner_with_items';
+  info: {
+    description: '';
+    displayName: 'Banner with Items';
+    icon: 'server';
+  };
+  attributes: {
+    background: Schema.Attribute.Media<'images' | 'videos'>;
+    items: Schema.Attribute.Component<'data.item', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+        },
+        number
+      >;
+  };
+}
+
+export interface LayoutHeroCenterWithBgImage extends Struct.ComponentSchema {
+  collectionName: 'components_layout_hero_center_with_bg_images';
+  info: {
+    description: '';
+    displayName: 'Hero';
+    icon: 'expand';
+  };
+  attributes: {
+    actionButtons: Schema.Attribute.Component<'ui.button', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'videos'>;
+    imgAsBackground: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    title: Schema.Attribute.String;
+    variant: Schema.Attribute.Enumeration<
+      ['left', 'right', 'centered', 'column']
+    > &
+      Schema.Attribute.DefaultTo<'left'>;
+  };
+}
+
+export interface LayoutRichBodyText extends Struct.ComponentSchema {
+  collectionName: 'components_layout_rich_body_texts';
+  info: {
+    description: '';
+    displayName: 'Rich Body Text';
+    icon: 'strikeThrough';
+  };
+  attributes: {
+    text: Schema.Attribute.Blocks;
+  };
+}
+
+export interface LayoutSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_sections';
+  info: {
+    description: '';
+    displayName: 'Section With Items';
+    icon: 'server';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    items: Schema.Attribute.Component<'data.item', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+        },
+        number
+      >;
+    replaceImageWithSteps: Schema.Attribute.Boolean;
+    titleBlock: Schema.Attribute.Component<'data.title-block', false>;
+  };
+}
+
+export interface LayoutSectionWithCta extends Struct.ComponentSchema {
+  collectionName: 'components_layout_section_with_ctas';
+  info: {
+    description: '';
+    displayName: 'Section With CTA';
+    icon: 'apps';
+  };
+  attributes: {
+    callToActions: Schema.Attribute.Component<'ui.button', true>;
+    image: Schema.Attribute.Media<'images'>;
+    imageAlt: Schema.Attribute.String;
+    titleBlock: Schema.Attribute.Component<'data.title-block', false>;
+  };
+}
+
+export interface UiButton extends Struct.ComponentSchema {
+  collectionName: 'components_ui_buttons';
+  info: {
+    description: '';
+    displayName: 'Button';
+    icon: 'cursor';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+    variant: Schema.Attribute.Enumeration<
+      ['filled', 'outlined', 'link', 'gradient']
+    >;
+  };
+}
+
+export interface UiLink extends Struct.ComponentSchema {
+  collectionName: 'components_ui_links';
+  info: {
+    description: '';
+    displayName: 'link';
+    icon: 'hashtag';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface UiLinkList extends Struct.ComponentSchema {
+  collectionName: 'components_ui_link_lists';
+  info: {
+    description: '';
+    displayName: 'linkList';
+    icon: 'bulletList';
+  };
+  attributes: {
+    link: Schema.Attribute.Component<'ui.link', true>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
+      'data.item': DataItem;
+      'data.key-value': DataKeyValue;
+      'data.title-block': DataTitleBlock;
       'inputs.input': InputsInput;
+      'layout.banner-with-items': LayoutBannerWithItems;
+      'layout.hero-center-with-bg-image': LayoutHeroCenterWithBgImage;
+      'layout.rich-body-text': LayoutRichBodyText;
       'layout.section': LayoutSection;
       'layout.section-with-cta': LayoutSectionWithCta;
-      'layout.rich-body-text': LayoutRichBodyText;
-      'layout.hero-center-with-bg-image': LayoutHeroCenterWithBgImage;
-      'layout.banner-with-items': LayoutBannerWithItems;
-      'data.title-block': DataTitleBlock;
-      'data.key-value': DataKeyValue;
-      'data.item': DataItem;
+      'ui.button': UiButton;
+      'ui.link': UiLink;
+      'ui.link-list': UiLinkList;
     }
   }
 }

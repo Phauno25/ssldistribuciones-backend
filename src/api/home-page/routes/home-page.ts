@@ -4,6 +4,7 @@
  * home-page router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreRouter('api::home-page.home-page');
+
+export default factories.createCoreRouter('api::home-page.home-page');

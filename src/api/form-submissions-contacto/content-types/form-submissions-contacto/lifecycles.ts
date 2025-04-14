@@ -10,14 +10,11 @@ export default {
 
     try {
       const formConfig = await strapi
-        .documents("api::forms-config.forms-config")
-        .findFirst({ filters: { name: { $eq: "form-contactos" } } });
+        .documents("api::form-config.form-config")
+        .findFirst({ filters: { name: { $eq: "form-submissions-contacto" } } });
 
       if (formConfig) {
-        const replacedTemplate = renderTemplate(
-          formConfig.mail_bodyText,
-          result
-        );
+        const replacedTemplate = renderTemplate(formConfig.mail_body, result);
         const mailToAddresses = formConfig.mail_to
           .split(",")
           .map((email) => email.trim());
@@ -30,7 +27,7 @@ export default {
             text: replacedTemplate,
           });
         } catch (err) {
-          console.log(err);
+          console.error(err);
         }
       }
     } catch (error) {

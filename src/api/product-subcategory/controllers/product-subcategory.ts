@@ -4,6 +4,7 @@
  * product-subcategory controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreController('api::product-subcategory.product-subcategory');
+
+export default factories.createCoreController('api::product-subcategory.product-subcategory');

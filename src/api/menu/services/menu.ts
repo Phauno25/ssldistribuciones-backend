@@ -4,6 +4,7 @@
  * menu service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreService('api::menu.menu');
+
+export default factories.createCoreService('api::menu.menu');

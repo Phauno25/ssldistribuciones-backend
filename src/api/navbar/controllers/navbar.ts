@@ -4,6 +4,7 @@
  * navbar controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi'
 
-module.exports = createCoreController('api::navbar.navbar');
+
+export default factories.createCoreController('api::navbar.navbar');

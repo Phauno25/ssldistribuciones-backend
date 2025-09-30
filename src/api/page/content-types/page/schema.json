@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "hero": {
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.hero-center-with-bg-image"
-    },
     "body": {
       "type": "dynamiczone",
       "components": [
@@ -24,7 +19,9 @@
         "layout.section-with-cta",
         "layout.banner-with-items",
         "data.title-block",
-        "layout.rich-body-text"
+        "layout.rich-body-text",
+        "layout.text-grid",
+        "layout.section-with-content"
       ]
     },
     "name": {
@@ -35,6 +32,9 @@
       "type": "uid",
       "targetField": "name",
       "required": true
+    },
+    "description": {
+      "type": "string"
     }
   }
 }

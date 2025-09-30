@@ -13,13 +13,11 @@
       "component": "data.item",
       "max": 4
     },
-    "background": {
-      "allowedTypes": [
-        "images",
-        "videos"
-      ],
-      "type": "media",
-      "multiple": false
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
     }
   }
 }

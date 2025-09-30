@@ -23,7 +23,10 @@
         "layout.banner-with-items",
         "layout.section",
         "layout.section-with-cta",
-        "layout.rich-body-text"
+        "layout.rich-body-text",
+        "layout.banner-with-cta",
+        "layout.section-with-content",
+        "layout.text-grid"
       ]
     }
   }

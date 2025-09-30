@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_banner_with_ctas",
+  "info": {
+    "displayName": "Banner With CTA",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.button"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

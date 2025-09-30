@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_layout_section_with_contents",
+  "info": {
+    "displayName": "Section With Content",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "badge": {
+      "type": "string"
+    }
+  }
+}

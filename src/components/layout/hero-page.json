@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_hero_pages",
+  "info": {
+    "displayName": "HeroPage",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

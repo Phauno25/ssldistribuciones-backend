@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_data_telephones",
+  "info": {
+    "displayName": "telephones",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "phone": {
+      "type": "string"
+    },
+    "hasWhatsapp": {
+      "type": "boolean"
+    }
+  }
+}

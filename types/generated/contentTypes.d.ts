@@ -369,6 +369,39 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactInfoContactInfo extends Struct.SingleTypeSchema {
+  collectionName: 'contact_infos';
+  info: {
+    description: '';
+    displayName: 'Contact Info';
+    pluralName: 'contact-infos';
+    singularName: 'contact-info';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    addresses: Schema.Attribute.Component<'data.key-value', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    emails: Schema.Attribute.Component<'data.key-value', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-info.contact-info'
+    > &
+      Schema.Attribute.Private;
+    opening_hours: Schema.Attribute.Component<'data.key-value', true>;
+    phones: Schema.Attribute.Component<'data.key-value', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -485,6 +518,9 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'layout.section',
         'layout.section-with-cta',
         'layout.rich-body-text',
+        'layout.banner-with-cta',
+        'layout.section-with-content',
+        'layout.text-grid',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -582,18 +618,53 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'layout.banner-with-items',
         'data.title-block',
         'layout.rich-body-text',
+        'layout.text-grid',
+        'layout.section-with-content',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hero: Schema.Attribute.Component<'layout.hero-center-with-bg-image', false>;
+    description: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPointOfSalePointOfSale extends Struct.CollectionTypeSchema {
+  collectionName: 'point_of_sales';
+  info: {
+    description: '';
+    displayName: 'Point Of Sale';
+    pluralName: 'point-of-sales';
+    singularName: 'point-of-sale';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    addresses: Schema.Attribute.Component<'data.key-value', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    emails: Schema.Attribute.Component<'data.key-value', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::point-of-sale.point-of-sale'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    opening_hours: Schema.Attribute.Component<'data.key-value', true>;
+    phones: Schema.Attribute.Component<'data.key-value', true>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1331,6 +1402,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::contact-info.contact-info': ApiContactInfoContactInfo;
       'api::footer.footer': ApiFooterFooter;
       'api::form-config.form-config': ApiFormConfigFormConfig;
       'api::form-submissions-contacto.form-submissions-contacto': ApiFormSubmissionsContactoFormSubmissionsContacto;
@@ -1338,6 +1410,7 @@ declare module '@strapi/strapi' {
       'api::menu.menu': ApiMenuMenu;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::page.page': ApiPagePage;
+      'api::point-of-sale.point-of-sale': ApiPointOfSalePointOfSale;
       'api::product-category.product-category': ApiProductCategoryProductCategory;
       'api::product-collection.product-collection': ApiProductCollectionProductCollection;
       'api::product-detail.product-detail': ApiProductDetailProductDetail;

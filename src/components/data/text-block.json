@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_data_text_blocks",
+  "info": {
+    "displayName": "Text Block",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "contentMain": {
+      "type": "blocks"
+    },
+    "contentSecondary": {
+      "type": "blocks"
+    }
+  }
+}

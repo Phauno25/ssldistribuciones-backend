@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface DataAddresses extends Struct.ComponentSchema {
+  collectionName: 'components_data_addresses';
+  info: {
+    displayName: 'Addresses';
+    icon: 'pin';
+  };
+  attributes: {
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface DataItem extends Struct.ComponentSchema {
   collectionName: 'components_data_items';
   info: {
@@ -9,7 +20,10 @@ export interface DataItem extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    icon: Schema.Attribute.Enumeration<['user-info', 'contacts', 'logout']>;
+    icon: Schema.Attribute.String;
+    iconPosition: Schema.Attribute.Enumeration<
+      ['left', 'right', 'top', 'bottom']
+    >;
     image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
   };
@@ -24,6 +38,32 @@ export interface DataKeyValue extends Struct.ComponentSchema {
   attributes: {
     name: Schema.Attribute.String;
     value: Schema.Attribute.String;
+  };
+}
+
+export interface DataTelephones extends Struct.ComponentSchema {
+  collectionName: 'components_data_telephones';
+  info: {
+    displayName: 'telephones';
+    icon: 'phone';
+  };
+  attributes: {
+    hasWhatsapp: Schema.Attribute.Boolean;
+    phone: Schema.Attribute.String;
+  };
+}
+
+export interface DataTextBlock extends Struct.ComponentSchema {
+  collectionName: 'components_data_text_blocks';
+  info: {
+    displayName: 'Text Block';
+    icon: 'bold';
+  };
+  attributes: {
+    contentMain: Schema.Attribute.Blocks;
+    contentSecondary: Schema.Attribute.Blocks;
+    header: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -59,6 +99,21 @@ export interface InputsInput extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutBannerWithCta extends Struct.ComponentSchema {
+  collectionName: 'components_layout_banner_with_ctas';
+  info: {
+    description: '';
+    displayName: 'Banner With CTA';
+    icon: 'layout';
+  };
+  attributes: {
+    cta: Schema.Attribute.Component<'ui.button', true>;
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutBannerWithItems extends Struct.ComponentSchema {
   collectionName: 'components_layout_banner_with_items';
   info: {
@@ -67,7 +122,7 @@ export interface LayoutBannerWithItems extends Struct.ComponentSchema {
     icon: 'server';
   };
   attributes: {
-    background: Schema.Attribute.Media<'images' | 'videos'>;
+    description: Schema.Attribute.String;
     items: Schema.Attribute.Component<'data.item', true> &
       Schema.Attribute.SetMinMax<
         {
@@ -75,6 +130,7 @@ export interface LayoutBannerWithItems extends Struct.ComponentSchema {
         },
         number
       >;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -102,6 +158,18 @@ export interface LayoutHeroCenterWithBgImage extends Struct.ComponentSchema {
       ['left', 'right', 'centered', 'column']
     > &
       Schema.Attribute.DefaultTo<'left'>;
+  };
+}
+
+export interface LayoutHeroPage extends Struct.ComponentSchema {
+  collectionName: 'components_layout_hero_pages';
+  info: {
+    displayName: 'HeroPage';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -138,6 +206,20 @@ export interface LayoutSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutSectionWithContent extends Struct.ComponentSchema {
+  collectionName: 'components_layout_section_with_contents';
+  info: {
+    displayName: 'Section With Content';
+    icon: 'layer';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    content: Schema.Attribute.Blocks;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutSectionWithCta extends Struct.ComponentSchema {
   collectionName: 'components_layout_section_with_ctas';
   info: {
@@ -150,6 +232,18 @@ export interface LayoutSectionWithCta extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'>;
     imageAlt: Schema.Attribute.String;
     titleBlock: Schema.Attribute.Component<'data.title-block', false>;
+  };
+}
+
+export interface LayoutTextGrid extends Struct.ComponentSchema {
+  collectionName: 'components_layout_text_grids';
+  info: {
+    displayName: 'Text Grid';
+    icon: 'layout';
+  };
+  attributes: {
+    leftBlock: Schema.Attribute.Component<'data.text-block', false>;
+    rightBlock: Schema.Attribute.Component<'data.text-block', false>;
   };
 }
 
@@ -198,15 +292,22 @@ export interface UiLinkList extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'data.addresses': DataAddresses;
       'data.item': DataItem;
       'data.key-value': DataKeyValue;
+      'data.telephones': DataTelephones;
+      'data.text-block': DataTextBlock;
       'data.title-block': DataTitleBlock;
       'inputs.input': InputsInput;
+      'layout.banner-with-cta': LayoutBannerWithCta;
       'layout.banner-with-items': LayoutBannerWithItems;
       'layout.hero-center-with-bg-image': LayoutHeroCenterWithBgImage;
+      'layout.hero-page': LayoutHeroPage;
       'layout.rich-body-text': LayoutRichBodyText;
       'layout.section': LayoutSection;
+      'layout.section-with-content': LayoutSectionWithContent;
       'layout.section-with-cta': LayoutSectionWithCta;
+      'layout.text-grid': LayoutTextGrid;
       'ui.button': UiButton;
       'ui.link': UiLink;
       'ui.link-list': UiLinkList;

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_data_addresses",
+  "info": {
+    "displayName": "Addresses",
+    "icon": "pin"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

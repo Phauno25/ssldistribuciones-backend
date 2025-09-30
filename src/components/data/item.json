@@ -22,11 +22,15 @@
       "type": "text"
     },
     "icon": {
+      "type": "string"
+    },
+    "iconPosition": {
       "type": "enumeration",
       "enum": [
-        "user-info",
-        "contacts",
-        "logout"
+        "left",
+        "right",
+        "top",
+        "bottom"
       ]
     }
   }

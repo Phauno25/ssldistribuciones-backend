@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "point_of_sales",
+  "info": {
+    "singularName": "point-of-sale",
+    "pluralName": "point-of-sales",
+    "displayName": "Point Of Sale",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "addresses": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.key-value"
+    },
+    "phones": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.key-value"
+    },
+    "opening_hours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.key-value"
+    },
+    "emails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.key-value"
+    }
+  }
+}

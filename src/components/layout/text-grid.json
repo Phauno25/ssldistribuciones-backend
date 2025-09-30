@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_layout_text_grids",
+  "info": {
+    "displayName": "Text Grid",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "leftBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.text-block"
+    },
+    "rightBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.text-block"
+    }
+  }
+}

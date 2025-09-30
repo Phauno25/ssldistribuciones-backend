@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_infos",
+  "info": {
+    "singularName": "contact-info",
+    "pluralName": "contact-infos",
+    "displayName": "Contact Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "addresses": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.key-value"
+    },
+    "phones": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.key-value"
+    },
+    "opening_hours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.key-value"
+    },
+    "emails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.key-value"
+    }
+  }
+}

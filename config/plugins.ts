@@ -1,12 +1,13 @@
 module.exports = ({ env }) => ({
   email: {
     config: {
-      provider: "sendgrid",
+      provider: "strapi-provider-email-brevo",
       providerOptions: {
-        apiKey: env("SENDGRID_API_KEY"),
+        apiKey: env("SMTP_API_KEY"),
       },
       settings: {
-        defaultFrom: "pablohcoronel25@gmail.com",
+        defaultSenderEmail: "pablohcoronel25@gmail.com",
+        defaultSenderName: "Pablo Coronel",
         defaultReplyTo: "pablohcoronel25@gmail.com",
       },
     },

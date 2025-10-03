@@ -14,6 +14,7 @@ export default {
         .findFirst({ filters: { name: { $eq: "form-submissions-contacto" } } });
 
       if (formConfig) {
+        console.log("Form Config:", formConfig);
         const replacedTemplate = renderTemplate(formConfig.mail_body, result);
         const mailToAddresses = formConfig.mail_to
           .split(",")
